@@ -60,8 +60,7 @@ func TestGetAPIKey(t *testing.T) {
 				"Authorization": []string{"ApiKeymy-api-key"},
 			},
 			expectedKey: "",
-			expectedErr: errors.New("Break code"), // this breaks the test
-			// expectedErr: errors.New("malformed authorization header"),
+			expectedErr: errors.New("malformed authorization header"),
 		},
 	}
 
