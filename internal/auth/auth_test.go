@@ -7,22 +7,20 @@ import (
 	"testing"
 )
 
-
-
 func TestGetAPIKey(t *testing.T) {
 	tests := []struct {
-		name           string
-		headers        http.Header
-		expectedKey    string
-		expectedErr    error
+		name        string
+		headers     http.Header
+		expectedKey string
+		expectedErr error
 	}{
 		{
 			name: "Valid Authorization Header",
 			headers: http.Header{
 				"Authorization": []string{"ApiKey my-api-key"},
 			},
-			expectedKey:    "my-api-key",
-			expectedErr:    nil,
+			expectedKey: "my-api-key",
+			expectedErr: nil,
 		},
 		{
 			name:        "Missing Authorization Header",
