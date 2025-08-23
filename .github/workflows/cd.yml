@@ -31,4 +31,7 @@ jobs:
       
       - name: Build & Push Docker Image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/omega-wind-469807-f2/notely-ar-repo/notely:latest .
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/omega-wind-469807-f2/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project omega-wind-469807-f2 --max-instances=4
       
